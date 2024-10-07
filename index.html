@@ -1,37 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Frontend Mentor | Age calculator app</title>
+  <script src="/index.js" defer></script>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    @font-face {
+      font-family: Poppins;
+      src: url("/assets/fonts/Poppins-Bold.ttf") format("truetype");
+      font-weight: bold;
+    }
+
+    @font-face {
+      font-family: Poppins;
+      src: url("/assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+      font-weight: bolder;
+    }
+
+    @font-face {
+      font-family: Poppins;
+      src: url("/assets/fonts/Poppins-Regular.ttf") format("truetype");
+      font-weight: normal;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+
+    * {
+      font-family: 'Poppins';
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    #border {
+      border-radius: 20px 20px 100px 20px;
+    }
   </style>
 </head>
-<body>
 
-  Day
-  DD
+<body class="bg-dark">
+  <div class="mx-auto row d-grid" style="justify-items: center;">
+    <div class="m-5 bg-white p-5 col-lg-4 col-sm-12 w-auto" id="border">
+      <div class="d-flex gap-3">
+        <div>
+          <p class="text-uppercase text-black-50"><b>Day</b></p>
+          <input type="number" min="1" max="31" class="fw-bold w-100 fs-3" name="day" id="day" step="1"
+            placeholder="DD">
+        </div>
+        <div>
+          <p class="text-uppercase text-black-50"><b>Month</b></p>
+          <input type="number" min="1" max="12" class="fw-bold w-100 fs-3" name="month" id="month" step="1"
+            placeholder="MM">
+        </div>
+        <div>
+          <p class="text-uppercase text-black-50"><b>Year</b></p>
+          <input type="number" min="0" max="2024" class="fw-bold w-100 fs-3" name="year" id="year" step="1"
+            placeholder="YYYY">
+        </div>
+      </div>
 
-  Month
-  MM
+      <div class="d-flex">
+        <div class="w-100 h-100 border-bottom border-dark">
+          ‎
+        </div>
+        <div class="rounded-circle p-3 bg-info w-25 position-relative">
+          <img class="w-100" src="/assets/images/icon-arrow.svg" alt="">
+        </div>
+      </div>
 
-  Year
-  YYYY
+      <div>
+        <h1><span class="text-info" id="outputYear">--</span> <b><i>years</i></b></h1>
+        <h1><span class="text-info" id="outputMonth">--</span> <b><i>months</i></b></h1>
+        <h1><span class="text-info" id="outputDay">--</span> <b><i>days</i></b></h1>
+      </div>
+    </div>
+  </div>
 
-  -- years
-  -- months
-  -- days
-  
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
+
 </html>
